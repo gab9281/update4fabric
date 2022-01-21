@@ -3,7 +3,6 @@ package com.gab9281.update4fabric.commands;
 import com.gab9281.update4fabric.Main;
 import com.gab9281.update4fabric.base_classes.BaseCommand;
 import com.mojang.brigadier.context.CommandContext;
-import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
 public class CheckUpdate extends BaseCommand {
 
@@ -18,7 +17,13 @@ public class CheckUpdate extends BaseCommand {
     }
 
     @Override
-    public int run(CommandContext<Object> context) throws CommandSyntaxException {
+    protected int runClient(CommandContext ctx) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    protected int runServer(CommandContext ctx) {
         // TODO Auto-generated method stub
         return 0;
     }

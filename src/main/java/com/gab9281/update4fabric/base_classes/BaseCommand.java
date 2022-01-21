@@ -1,12 +1,11 @@
 package com.gab9281.update4fabric.base_classes;
 
-import com.mojang.brigadier.Command;
 import com.mojang.brigadier.context.CommandContext;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.fabricmc.fabric.api.client.command.v1.FabricClientCommandSource;
 
-public abstract class BaseCommand implements Command<Object> {
+public abstract class BaseCommand {
     static protected PlayerEntity player = null;
 
     public void Register(String environment) {
@@ -21,7 +20,11 @@ public abstract class BaseCommand implements Command<Object> {
         return ((FabricClientCommandSource) ctx.getSource()).getPlayer();
     }
 
+    public abstract void registerClient();
+
+    protected abstract int runClient(CommandContext ctx);
+
     public abstract void registerServer();
 
-    public abstract void registerClient();
+    protected abstract int runServer(CommandContext ctx);
 }

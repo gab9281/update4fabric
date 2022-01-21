@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 
 import com.gab9281.update4fabric.commands.CheckUpdate;
+import com.gab9281.update4fabric.commands.Infos;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,5 +27,6 @@ public class Main implements ModInitializer {
 
 	public void loadCommands(String environment) {
 		new CheckUpdate().Register(environment);
+		new Infos().Register(environment);
 	}
 }

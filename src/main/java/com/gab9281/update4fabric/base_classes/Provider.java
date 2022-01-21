@@ -6,16 +6,18 @@ import java.net.http.HttpClient.Version;
 import java.nio.file.Path;
 import java.time.Duration;
 
+import com.gab9281.update4fabric.Exceptions.ModNotFoundException;
+
 public abstract class Provider {
 
-    protected HttpClient httpclient;
+    static protected HttpClient httpclient;
 
     public Provider() {
         httpclient = HttpClient.newBuilder().version(Version.HTTP_2).followRedirects(Redirect.NORMAL)
                 .connectTimeout(Duration.ofSeconds(5)).build();
     }
 
-    public abstract Mod getModInfosByModId(String modId);
+    public abstract Mod getModInfosByModId(String modId) throws ModNotFoundException;
 
     public abstract Mod getModInfosByHash(String hash);
 

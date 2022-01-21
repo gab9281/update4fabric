@@ -1,9 +1,11 @@
 package com.gab9281.update4fabric.commands;
 
 import com.gab9281.update4fabric.Main;
-import com.gab9281.update4fabric.base_classes.Command;
+import com.gab9281.update4fabric.base_classes.BaseCommand;
+import com.mojang.brigadier.context.CommandContext;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
-public class CheckUpdate extends Command {
+public class CheckUpdate extends BaseCommand {
 
     @Override
     public void registerServer() {
@@ -16,8 +18,9 @@ public class CheckUpdate extends Command {
     }
 
     @Override
-    public void run() {
-
+    public int run(CommandContext<Object> context) throws CommandSyntaxException {
+        // TODO Auto-generated method stub
+        return 0;
     }
 
 }
